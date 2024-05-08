@@ -1,0 +1,80 @@
+body{
+    font-family: "Noto Sans", sans-serif;
+}
+
+.navbar-brand{
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    margin-left: 60px;
+}
+
+.sublinks{
+    margin: 0 0 0 30%;
+}
+
+.sublinks li{
+    margin-right: 40px;
+    font-weight: 500;
+}
+
+.demoBtn{
+    margin-right: 20px;
+    width: 200px;
+}
+
+/*foooter CSS*/
+.footer{
+    color: white;
+    background-color: #31363F;
+    padding-top: 25px;
+}
+
+.feedback-form form input, textarea{
+    display: block;
+    margin: 5px 0 5px 25%;
+    width: 300px;
+    border-radius: 10px;
+    padding-left: 5px;
+    border-width: 0;
+    background-color: #efefef;
+}
+
+.footer-sublinks{
+    cursor: pointer;
+}
+
+form input{
+    height: 40px;
+}
+
+form textarea{
+    height: 120px;
+}
+
+.brand-logo{
+    font-family: "Roboto Mono", monospace;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 576px){
+    .navbar-brand{
+        margin-left: 20px;
+    }
+
+    .sublinks{
+        margin: 0;
+    }
+
+    .sublinks li{
+        margin: 0;
+    }
+
+    .demoBtn{
+        margin: 0;
+        width: 70%;
+    }
+    .feedback-form form input, textarea {
+        width: 70%;
+        margin: 5px 0 5px 12%;
+    }
+}

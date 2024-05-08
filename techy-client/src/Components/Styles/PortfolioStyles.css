@@ -1,0 +1,29 @@
+.portfolio{
+    background-color: #efefef;
+    padding: 5%;
+}
+
+.projectCard{
+    text-align: left;
+    width: 70%;
+    margin: 10px 15%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+.projectDiv :hover{
+    border: 3px solid rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.projectCard :hover{
+    border: 0;
+}
+
+@media screen and (max-width: 576px){
+    .projectCard{
+        margin: 10px 5%;
+        width: 90%;
+    }
+}

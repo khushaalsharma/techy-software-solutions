@@ -1,0 +1,79 @@
+.introImg{
+    background-image: url("../../Images/AI-in-web-design.jpg");
+    padding: 15% 20%;
+    width: 50%;    
+}
+
+.introImg-brand{
+    font-family: "Roboto Mono", monospace;
+    color: black;
+}
+
+.introText{
+    width: 50%;
+    padding: 100px;
+    text-align: left;
+}
+
+.apptBtn{
+    margin: 20px;
+    width: 300px;
+}
+
+.service{
+    padding: 5%;
+    border: 1px #000 solid;
+}
+
+#testimonials{
+    text-align: left;
+    padding: 30px;
+    height: 200px;
+}
+
+#restTestimonial{
+    padding: 20px;
+    text-align: center;
+    margin: 30px;
+}
+
+#process{
+    padding-top: 20px;
+}
+
+.process-card{
+    border: 1px #000 solid;
+    border-radius: 20px;
+    width: 25%;
+    margin: 5%;
+    padding: 10px;
+    box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
+}
+
+.process-card h5{
+    color: indigo;
+}
+
+.process-card svg{
+    width: 100px;
+}
+
+.processCards{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 576px){
+    .processCards{
+        display: block;
+    }
+
+    .process-card{
+        width: 80%;
+        margin: 10%;
+    }
+
+    #testimonials{
+        margin-bottom: 85%;
+    }
+}
