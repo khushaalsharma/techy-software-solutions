@@ -49,26 +49,26 @@ const HomePage = () => {
             <h1>What we offer</h1>
             <div className='img-slideshow'></div>
             <div className='row'>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service web'>
                 <h2>Web Application</h2>
               </div>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service app'>
                 <h2>Mobile Application</h2>
               </div>
             </div>
             <div className='row'>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service uiux'>
                 <h2>UI/UX Design</h2>
               </div>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service ai'>
                 <h2>AI Services</h2>
               </div>
             </div>
             <div className='row'>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service seo'>
                 <h2>SEO Strategies</h2>
               </div>
-              <div className='col-md-6 service'>
+              <div className='col-md-6 service gdesign'>
                 <h2>Graphic Design</h2>
               </div>
             </div>

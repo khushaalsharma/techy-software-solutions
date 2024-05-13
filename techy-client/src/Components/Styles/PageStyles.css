@@ -10,7 +10,7 @@
 }
 
 .introText{
-    width: 50%;
+    width: 100%;
     padding: 100px;
     text-align: left;
 }
@@ -76,4 +76,45 @@
     #testimonials{
         margin-bottom: 85%;
     }
+}
+
+.web:hover{
+    background-image: url(../../Images/0_c76zWkylO5ltFqsR.jpg);
+    color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.app:hover{
+    background-image: url(../../Images/6410ebf8e483b5758186fbd8_ABM\ college\ mobile\ app\ dev\ main.jpg);
+    color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.seo:hover{
+    background-image: url(../../Images/seo-strategy-mindseo.png);
+    color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ai:hover{
+    background-image: url(../../Images/images.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.uiux:hover{
+    background-image: url(../../Images/UX-UI-Design.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gdesign:hover{
+    background-image: url(../../Images/graphic.jpg);
+    color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
