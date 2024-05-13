@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import "./Styles/HomePageStyles.css";
+import axios from 'axios';
+
 
 const Footer = () => {
 
@@ -16,9 +18,17 @@ const Footer = () => {
         setFormData({...formData, [name]: value});
     }
 
-    const sendFeedback = () => {
+    const sendFeedback = async() => {
         try{
-
+            await axios
+                    .post("http://localhost:5000/feedback", formData, {withCredentials: true})
+                    .then(response => {
+                        alert("Thanks for sharing your feedback");
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        alert("Error in sending feedback, try again later");
+                    })
         }   
         catch(error){
             alert("Error sending feedback!!!");

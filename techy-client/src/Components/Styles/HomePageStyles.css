@@ -27,6 +27,7 @@ body{
     color: white;
     background-color: #31363F;
     padding-top: 25px;
+    margin-top: 50px;
 }
 
 .feedback-form form input, textarea{
@@ -56,7 +57,7 @@ form textarea{
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 578px){
     .navbar-brand{
         margin-left: 20px;
     }

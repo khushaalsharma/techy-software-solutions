@@ -7,10 +7,14 @@ import WebNavbar from './WebNavbar.js';
 import Footer from './Footer.js';
 
 const ContactPage = () => {
+
+    const [scheduled, setScheduled] = useState(false);
+
     const [formData, setFormData] = useState({
         name: "",
         org: "",
         email: "",
+        phone: "",
         domain: "",
         desc: ""
     });
@@ -21,10 +25,20 @@ const ContactPage = () => {
         setFormData({...formData, [name]: value});
     }
 
-    async function schedule(){
+    async function schedule(e){
+
+        e.preventDefault();
+
         try{
-            await axios.post("http://localhost:5000/addCustomer", formData, {})
-                
+            await axios
+                .post("http://localhost:5000/addCustomer", formData, {withCredentials: true})
+                .then(response => {
+                    setScheduled(true);
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Try again later");
+                })
         }
         catch(error){
             alert("Error scheduling, try again later");
@@ -36,9 +50,9 @@ const ContactPage = () => {
             <WebNavbar/>
             <div className='contact-page'>
                 <section id='appointment'>
-                    <div className='apptForm'>
+                    {scheduled ? <h4>We've recorded your details. We will call you soon</h4> : <div className='apptForm'>
                         <h4>Schedule a call with us</h4>
-                        <form onSubmit={schedule}>
+                        <form>
                             <input
                                 name='name'
                                 type='text'
@@ -63,12 +77,20 @@ const ContactPage = () => {
                                 placeholder='Your Email'
                                 required
                             />
+                            <input
+                                name='phone'
+                                type='number'
+                                value={formData.phone}
+                                onChange={handleChange}
+                                placeholder='Your Phone'
+                                required
+                            />
                             <select name='domain' value={formData.domain} onChange={handleChange}>
                                 <option value="web">Web Development</option>
                                 <option value="app">App Development</option>
                                 <option value="uiux">UI/UX Design</option>
                                 <option value="ai">AI Services</option>
-                                <option value="seo">SEO Startegies</option>
+                                <option value="seo">SEO Strategies</option>
                                 <option value="graphic">Graphic Designs</option>
                             </select>
                             <textarea
@@ -77,9 +99,9 @@ const ContactPage = () => {
                                 onChange={handleChange}
                                 placeholder='Add some description about the project'
                             />
-                            <button className='btn btn-danger' type='submit'>Schedule</button>
+                            <button className='btn btn-danger' onClick={schedule}>Schedule</button>
                         </form>
-                    </div>
+                    </div>}
                 </section>
                 <section id='contact'>
                     <div className='row'>

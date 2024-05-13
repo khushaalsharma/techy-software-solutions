@@ -2,8 +2,10 @@ import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
 import mongoose from "mongoose"
-import { configDotenv } from "dotenv"
+import { config } from "dotenv"
 import {newCustomer, feedback} from "./RouteFunctions/UtilityFunction.js";
+
+config();
 
 const app = express();
 
@@ -17,14 +19,16 @@ mongoose
     })
 
 app.use(cors({
-    origin: "http://locahost:3000",
+    origin: "http://localhost:3000",
     credentials: true
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 //REST APIs
 app.post("/addCustomer", newCustomer);
 app.post("/feedback", feedback);
 
-app.listen(process.env.PORT, () => {
-    console.log("Server connected");
+app.listen(5000, () => {
+    console.log("Server connected at 5000");
 })
