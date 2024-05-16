@@ -14,7 +14,7 @@ import nodemailer from "nodemailer";
 // });
 
 export const newCustomer = async(req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://techy-software.vercel.app/");
     res.setHeader("Access-Control-Allow-Methods", "POST");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Credentials", true);
@@ -51,7 +51,7 @@ export const newCustomer = async(req, res) => {
 }
 
 export const feedback = async(req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader("Access-Control-Allow-Origin", "https://techy-software.vercel.app/");
     res.setHeader("Access-Control-Allow-Method", "POST");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Credentials", true);

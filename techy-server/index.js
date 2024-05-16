@@ -20,7 +20,7 @@ mongoose
     })
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://techy-software.vercel.app/",
     credentials: true
 }));
 app.use(bodyParser.json());
