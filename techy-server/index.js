@@ -28,6 +28,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //REST APIs
+app.get("/", (req, res) => {
+    console.log("connected");
+})
 app.post("/addCustomer", newCustomer);
 app.post("/feedback", feedback);
 
