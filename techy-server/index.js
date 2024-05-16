@@ -27,10 +27,12 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-//REST APIs
-app.get("/", (req, res) => {
-    console.log("connected");
+app.use((req, res, next) => {
+    console.log(`Received request for: ${req.url}`);
+    next();
 })
+
+//REST APIs
 app.post("/addCustomer", newCustomer);
 app.post("/feedback", feedback);
 
