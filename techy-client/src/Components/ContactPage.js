@@ -31,7 +31,7 @@ const ContactPage = () => {
 
         try{
             await axios
-                .post("http://localhost:5000/addCustomer", formData, {withCredentials: true})
+                .post("https://techy-software-solutions.vercel.app/addCustomer", formData, {withCredentials: true})
                 .then(response => {
                     setScheduled(true);
                 })
