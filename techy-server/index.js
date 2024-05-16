@@ -20,7 +20,7 @@ mongoose
     })
 
 app.use(cors({
-    origin: "https://techy-software.vercel.app/",
+    origin: "https://techy-software.vercel.app",
     methods: ["POST"],
     credentials: true
 }));
