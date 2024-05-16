@@ -39,7 +39,7 @@ const Footer = () => {
         <div className='row footer'>
             <div className='col-md-6 feedback-form'>
                 <h3>Share your Feedback with us</h3>
-                <form onSubmit={sendFeedback}>
+                <form>
                     <input
                         name='name'
                         type='text'
@@ -68,7 +68,7 @@ const Footer = () => {
                         aria-expanded = {false}
                         placeholder='Your feedback'
                     />
-                    <button className='btn btn-success' type='submit'>Send</button>
+                    <button className='btn btn-success' onClick={sendFeedback}>Send</button>
                 </form>
             </div>
             <div className='col-md-6'>

@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
 import mongoose from "mongoose"
+
 import { config } from "dotenv"
 import {newCustomer, feedback} from "./RouteFunctions/UtilityFunction.js";
 
@@ -10,7 +11,7 @@ config();
 const app = express();
 
 mongoose
-    .connect("mongodb://127.0.0.1:27017/techy-software")
+    .connect(process.env.DB_STRING)
     .then(connected => {
         console.log("Database Connected");
     })
