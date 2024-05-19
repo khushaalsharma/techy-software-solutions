@@ -21,7 +21,11 @@ const Footer = () => {
     const sendFeedback = async() => {
         try{
             await axios
-                    .post("https://techy-software-solutions.vercel.app/feedback", formData, {withCredentials: true})
+                    .post("https://techy-software-solutions.vercel.app/feedback", formData, 
+                     {headers:{
+                        'Content-Type': "application/json"
+                     },
+                     withCredentials: true})
                     .then(response => {
                         alert("Thanks for sharing your feedback");
                     })
