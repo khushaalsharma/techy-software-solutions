@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import customerModel from "../models/Customer-Model.js";
 import feedbackModel from "../models/Feedback-model.js";
 import nodemailer from "nodemailer";
@@ -13,7 +14,20 @@ import nodemailer from "nodemailer";
 //     authMethod: "PLAIN"
 // });
 
+const connectDB = async() => {
+    if(mongoose.connections[0].readyState){
+        return; //already connected
+    }
+
+    await mongoose.connect(process.env.DB_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
+};
+
 export const newCustomer = async(req, res) => {
+
+    await connectDB();
 
     if(req.method === "OPTIONS"){
         res.setHeader('Access-Control-Allow-Origin', 'https://techy-software.vercel.app');
@@ -22,7 +36,7 @@ export const newCustomer = async(req, res) => {
         res.setHeader('Access-Control-Allow-Credentials', true);
         return res.status(200).end(); // End the preflight request
     }
-    
+
     res.setHeader("Access-Control-Allow-Origin", "https://techy-software.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "POST");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -31,8 +45,8 @@ export const newCustomer = async(req, res) => {
     const {name, email, service, desc, phone} = req.body;
 
     try{
-        const newCust = await customerModel({name, email, service, description: desc, phone});
-        await newCust.save(); 
+        const newCust = await customerModel.create({name, email, service, description: desc, phone});
+
 
         // var mailoption = {
         //     from: "process.env.EMAIL",
@@ -61,6 +75,8 @@ export const newCustomer = async(req, res) => {
 
 export const feedback = async(req, res) => {
 
+    await connectDB();
+
     if(req.method === "OPTIONS"){
         res.setHeader('Access-Control-Allow-Origin', 'https://techy-software.vercel.app');
         res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -77,8 +93,7 @@ export const feedback = async(req, res) => {
     const {name, email, org, feedback} = req.body;
 
     try{
-        const newFeedback = await feedbackModel({name, email, organization: org, feedback});
-        await newFeedback.save();
+        const newFeedback = await feedbackModel.create({name, email, organization: org, feedback});
 
         // const mailoption = {
         //     from: process.env.EMAIL,
