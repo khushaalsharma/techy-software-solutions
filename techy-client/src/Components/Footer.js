@@ -43,7 +43,7 @@ const Footer = () => {
         <div className='row footer'>
             <div className='col-md-6 feedback-form'>
                 <h3>Share your Feedback with us</h3>
-                <form>
+                <form method="POST">
                     <input
                         name='name'
                         type='text'

@@ -53,7 +53,7 @@ const ContactPage = () => {
                 <section id='appointment'>
                     {scheduled ? <h4>We've recorded your details. We will call you soon</h4> : <div className='apptForm'>
                         <h4>Schedule a call with us</h4>
-                        <form>
+                        <form method="POST">
                             <input
                                 name='name'
                                 type='text'
